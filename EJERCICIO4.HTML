@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Redireción con setTimeout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #c8e6c9, #ffe0b2);
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 1.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 4: Redirección con setTimeout</h1>
+    <p>Serás redirigido a otra página en 3 segundos...</p>
+    <script>
+        
+        // Función para redirigir después de 3 segundos
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 3000);
+    </script>
+</body>
+
+</html>
