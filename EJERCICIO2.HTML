@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Compresión de cadenas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: linear-gradient(135deg, #f8bbd0, #bbdefb);
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4527a0;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 2: Compresión de cadenas</h1>
+    <input type="text" id?="cadena" placeholder="Escribe una cadena ...">
+    <br>
+    <button onclick="ejecutarCompresion()">Comprimir</button>
+    <button onclick="ejecutarDescompresion()">Descomprimir</button>
+
+    <div id="resultado" class="resultado"></div>
+
+    <script>
+        // Función para comprimir la cadena
+        function comprimir(cadena) {
+            if(/\d/.test(cadena)) {
+                throw new Error("La cadena no puede contener números.");
+            }
+
+            //Sustituimos los espacios por '?'
+            cadena = cadena.replace(/ /g, "?"); 
+            let resultado = "";
+            let contador = 1;
+        }
+    </script>
+</body>
+
+
+
+</html>
