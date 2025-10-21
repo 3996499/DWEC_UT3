@@ -61,6 +61,63 @@
             cadena = cadena.replace(/ /g, "?"); 
             let resultado = "";
             let contador = 1;
+
+            for(let i=0; i < cadena.length; i++) {
+                if(cadena[i] === cadena[i + 1]) {
+                    contador++;
+                } else {
+                    resultado += (contador > 1 ? contador : "") + cadena[i];
+                    contador = 1;
+                }
+            }
+
+            return resultado;
+        }
+
+
+
+        // Función para descomprimir la cadena
+        function descomprimir(cadena) {
+            let resultado = "";
+            let i = 0;
+
+            for (let i=0; i < cadena.length; i++) {
+                if (!isNan(cadena[i]) && cadena [i] !== " "){
+                    numero += cadena[i]; //acumula los digitos del número
+                } else {
+                    let repeticiones = numero ? parseInt(numero) : 1;
+                    resultado += (cadena[i] === "?" ? " " : cadena[i]).repeat(repeticiones);
+                    numero = "";
+                }
+            }
+            return resultado;
+        }
+
+
+
+        // Funciones de ejecución y manejo de errores
+        function ejecutarCompresion(){
+            const texto = document.getElementById("cadena").value;
+            const salida = document.getElementById("resultado");
+            try{
+                salida.textContent = "Resultado comprimido: " + comprimir(texto);
+                salida.className = "resultado";
+            } catch (error) {
+                salida.textContent = error.message;
+                salida.className = "resultado error";
+            }
+        }
+
+        function ejecutarDescompresion(){
+            const texto = document.getElementById("cadena").value;
+            const salida = document.getElementById("resultado");
+            try{
+                salida.textContent = "Resultado descomprimido: " + descomprimir(texto);
+                salida.className = "resultado";
+            } catch (error) {
+                salida.textContent = error.message;
+                salida.className = "resultado error";
+            }
         }
     </script>
 </body>
