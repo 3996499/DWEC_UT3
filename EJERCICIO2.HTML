@@ -29,6 +29,9 @@
             background-color: #4527a0;
         }
 
+       
+
+
         .resultado {
             margin-top: 20px;
             font-weight: bold;
@@ -79,14 +82,17 @@
         // Función para descomprimir la cadena
         function descomprimir(cadena) {
             let resultado = "";
-            let i = 0;
+            let numero = "";
+           
 
             for (let i=0; i < cadena.length; i++) {
-                if (!isNan(cadena[i]) && cadena [i] !== " "){
-                    numero += cadena[i]; //acumula los digitos del número
+                const caracter = cadena[i];
+                if (!isNaN(caracter) && caracter !== " ") {
+                    numero += caracter; 
                 } else {
                     let repeticiones = numero ? parseInt(numero) : 1;
-                    resultado += (cadena[i] === "?" ? " " : cadena[i]).repeat(repeticiones);
+                    const letra = (caracter === "?" ? " " : caracter);
+                    resultado += letra.repeat(repeticiones);
                     numero = "";
                 }
             }
@@ -100,7 +106,7 @@
             const texto = document.getElementById("cadena").value;
             const salida = document.getElementById("resultado");
             try{
-                salida.textContent = "Resultado comprimido: " + comprimir(texto);
+                salida.innerText = "Resultado comprimido: " + comprimir(texto);
                 salida.className = "resultado";
             } catch (error) {
                 salida.textContent = error.message;
@@ -112,7 +118,8 @@
             const texto = document.getElementById("cadena").value;
             const salida = document.getElementById("resultado");
             try{
-                salida.textContent = "Resultado descomprimido: " + descomprimir(texto);
+                salida.innerText = "Resultado comprimido: " + descomprimir(texto);
+
                 salida.className = "resultado";
             } catch (error) {
                 salida.textContent = error.message;
