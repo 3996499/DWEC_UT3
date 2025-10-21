@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Ventana con fecha</title>
+</head>
+<body>
+    <h1>Ejercicio 1: Ventana con fecha</h1>
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+
+    <script>
+        function abrirVentana() {
+            //abrimos una nueva venta de 600x400 
+            let nuevaVentana = window.open("", "ventanaFecha", "width=600,height=400");
+
+            //obtenemos la fecha actual
+            let hoy = new Date();
+            let dia = hoy.getDate();
+            let mes = hoy.getMonth() + 1; 
+            let anio = hoy.getFullYear();
+
+            //fecha fin de año
+            let finDeAnio = new Date(anio, 11, 31);
+
+            //diferencia en milisegundos que convertimos a días.
+            let diferencia = finDeAnio - hoy;
+            let diasRestantes = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+
+            //Mensaje en la nueva ventana
+            nuevaVentana.document.write(`
+                <html>
+                <head>
+                    <title>Fecha Actual</title>
+                </head>
+                <body Style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px;">
+                    <h2>Hoy es ${dia}/${mes}/${anio}</h2>
+                    <p>Faltan <strong>${diasRestantes}</strong> días para fin de año.</p>
+                </body>
+                </html>
+            `);
+            }
+    </script>
+    </body>
+</html>
