@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Contador de clics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #c8e6c9, #ffe0b2);
+            text-align: center;
+            padding: 80px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #contador {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #2e7d32;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: none;
+            background-color: #388e3c;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4527a0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Ejercicio 3 - Contador de clicks</h1>
+    <p> Haz clic en el botón para incrementar el contador.</p>
+
+    <div id="contador">0</div>
+    <button onclick="incrementar()">Haz click</button>
+    <script>
+        const contadorElemento = document.getElementById("contador");
+
+        //leer el valor guardado ( si no existe comienza en 0)
+        let contador = parseInt(localStorage.getItem("contador")) || 0;
+
+        // mostar el valor inicial al cargar la página
+
+        contadorElemento.innerText = contador;
+
+        const LIMITE = Number.MAX_SAFE_INTEGER;
+        function incrementar() {
+            if (contador >= LIMITE) {
+                alert("Ya no puedes realizar más clicks.");
+                return;
+            }
+
+            //incrementamos el contador
+            contador++;
+            contadorElemento.innerText = contador;
+
+
+            //guardamos el valor en localStorage
+            localStorage.setItem("contador", contador);
+        }
+
+
+        function reiniciar() {
+            contador = 0;
+            contadorElemento.innerText = contador;
+            localStorage.setItem("contador", contador);
+        }
+
+    </script>
+</body>
+
+
+</html>
