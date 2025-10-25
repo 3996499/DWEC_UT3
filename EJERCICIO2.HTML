@@ -6,11 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 2 - Compresión de cadenas</title>
     <style>
+           html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #c8e6c9, #ffe0b2);
             text-align: center;
             padding: 50px;
+            margin: 0;
+            position: relative;
+            min-height: 100vh;
+            box-sizing: border-box;
+            
         }
 
         h1 {
@@ -26,7 +36,7 @@
         }
 
         button {
-            background-color: #4527a0;
+            background-color: #388e3c;
         }
 
 
@@ -35,11 +45,25 @@
         .resultado {
             margin-top: 20px;
             font-weight: bold;
-            color: #2e7d32;
+            color: #333;
         }
 
         .error {
             color: red;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            opacity: 0.8;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            position: fixed;
+            background: transparent;
+
         }
     </style>
 </head>
@@ -127,6 +151,11 @@
             }
         }
     </script>
+
+
+<footer>
+            &copy; 2025 - Desarrollado por Carlos Melenchon | Módulo de DWEC | CIFP CARLOS III
+        </footer>
 </body>
 
 

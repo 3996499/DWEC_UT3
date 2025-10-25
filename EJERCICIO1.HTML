@@ -4,11 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio 1 - Ventana con fecha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #c8e6c9, #ffe0b2);
+            text-align: center;
+            padding: 80px;
+            margin: 0;
+            position: border-box;
+            min-height: 100vh;
+            box-sizing: relative   ;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: none;
+            background-color: #388e3c;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #2e7d32;
+        }
+            footer {
+                text-align: center ;
+                font-size: 0.9em;
+                opacity: 0.8;
+                padding: 10px;
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                background: transparent;
+            }
+
+
+    </style>
 </head>
 
 <body>
     <h1>Ejercicio 1: Ventana con fecha</h1>
     <button onclick="abrirVentana()">Abrir Ventana</button>
+
+
+     <footer>
+    &copy; 2025 - Desarrollado por Carlos Melenchón | Módulo de DWEC | CIFP CARLOS III
+  </footer> 
+
 
     <script>
         function abrirVentana() {
@@ -33,15 +82,52 @@
                 <html>
                 <head>
                     <title>Fecha Actual</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            background: linear-gradient(135deg, #c8e6c9, #ffe0b2);
+                            text-align: center;
+                            margin: 0;
+                            box-sizing: border-box;
+                            min-height: 100vh;
+                            position: relative;
+                            padding-top: 100px;
+                        }
+                        h2 {
+                            color: #333;
+                        }
+                        p {
+                            font-size: 1.2em;
+                            color: #333;
+                        }
+                            footer {
+                                text-align: center ;
+                                font-size: 0.9em;
+                                opacity: 0.8;
+                                padding: 10px;
+                                width: 100%;
+                                position: fixed;
+                                bottom: 0;
+                                left: 0;
+                                background: transparent;
+                            }
+                    </style>
+
+
                 </head>
                 <body Style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px;">
                     <h2>Hoy es ${dia}/${mes}/${anio}</h2>
                     <p>Faltan <strong>${diasRestantes}</strong> días para fin de año.</p>
-                </body>
+                <footer>
+            &copy; 2025 - Desarrollado por Carlos Melenchón | Módulo de DWEC | CIFP CARLOS III
+          </footer>
+                    </body>
                 </html>
             `);
         }
     </script>
+
+    
 </body>
 
 </html>
